@@ -6,10 +6,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        game();
+        new Game().game();
     }
+}
 
-    static void game() {
+class Game {
+    void game() {
         Scanner in = new Scanner(System.in);
         boolean win;
         boolean game = true;
@@ -55,5 +57,4 @@ public class Main {
             }
         }
     }
-
 }

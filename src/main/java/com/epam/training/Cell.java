@@ -1,23 +1,23 @@
 package com.epam.training;
 
 public class Cell {
-
-    private String value;
+    enum Value {EMPTY, X, O}
+    private Value value;
 
     public Cell() {
-        value = " ";
+        value = Value.EMPTY;
     }
 
-    String getValue() {
+    Value getValue() {
         return value;
     }
 
     void changeToX() {
-        value = "X";
+        value = Value.X;
     }
 
     void changeToO() {
-        value = "O";
+        value = Value.O;
     }
 
     void print() {

@@ -19,7 +19,7 @@ public class Field {
             System.out.println("  - - - ");
             System.out.print((i + 1) + "|");
             for (int j = 0; j < 3; j++) {
-                if (field[i][j].getValue() == null) {
+                if (field[i][j].getValue() == Cell.Value.EMPTY) {
                     System.out.print(" " + "|");
                 } else {
                     field[i][j].print();
@@ -33,7 +33,7 @@ public class Field {
     }
 
     boolean changeCell(int x, int y, int player) {
-        if (field[x][y].getValue().equals(" ")) {
+        if (field[x][y].getValue()== Cell.Value.EMPTY) {
             if (player == 1)
                 field[x][y].changeToX();
             else
@@ -54,25 +54,25 @@ public class Field {
             countArray[1] = 0;
 
             for (int j = 0; j < 3; j++) {
-                if (field[i][j].getValue().equals("X")) {
+                if (field[i][j].getValue()== Cell.Value.X) {
                     countArray[0]++;
-                } else if (field[i][j].getValue().equals("O")) {
+                } else if (field[i][j].getValue()== Cell.Value.O) {
                     countArray[0]--;
                 }
-                if (field[j][i].getValue().equals("X")) {
+                if (field[j][i].getValue()== Cell.Value.X) {
                     countArray[1]++;
-                } else if (field[j][i].getValue().equals("O")) {
+                } else if (field[j][i].getValue()== Cell.Value.O) {
                     countArray[1]--;
                 }
             }
-            if (field[i][i].getValue().equals("X")) {
+            if (field[i][i].getValue()== Cell.Value.X) {
                 countArray[2]++;
-            } else if (field[i][i].getValue().equals("O")) {
+            } else if (field[i][i].getValue()== Cell.Value.O) {
                 countArray[2]--;
             }
-            if (field[i][2 - i].getValue().equals("X")) {
+            if (field[i][2 - i].getValue()== Cell.Value.X) {
                 countArray[3]++;
-            } else if (field[i][2 - i].getValue().equals("O")) {
+            } else if (field[i][2 - i].getValue()== Cell.Value.O) {
                 countArray[3]--;
             }
             for (int c : countArray) {
